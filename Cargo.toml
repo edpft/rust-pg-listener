@@ -1,0 +1,18 @@
+[package]
+name = "rust-pg-listener"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "pg-listener"
+path = "src/main.rs"
+
+[dependencies]
+chrono = { version = "0.4.24", default-features = false, features = ["serde"] }
+dotenvy = "0.15.7"
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = "1.0.96"
+sqlx = { version = "0.6.3", features = ["runtime-tokio-rustls", "postgres", "json", "chrono"] }
+tokio = { version = "1.28.1", features = ["full"] }
